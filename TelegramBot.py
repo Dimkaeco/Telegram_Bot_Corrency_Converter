@@ -1,8 +1,13 @@
 import telebot
 import extensions
 from config import TELEGRAM_BOT_TOKEN
+import os
+from dotenv import load_dotenv, find_dotenv
 
-bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
+load_dotenv(find_dotenv())
+
+#bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
+bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
 
 @bot.message_handler(commands=['start', 'help'])
 def handle_start_help(message):
