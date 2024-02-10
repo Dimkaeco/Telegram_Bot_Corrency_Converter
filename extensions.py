@@ -9,7 +9,7 @@ class APIException(Exception):
 class CurrencyConverter:
     @staticmethod
     def get_price(base, quote, amount):
-        api_key = "1fbae4aeafafd089aecda465"
+        api_key = "your IP"
         url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{base}/{quote}/{amount}"
 
         response = requests.get(url)
